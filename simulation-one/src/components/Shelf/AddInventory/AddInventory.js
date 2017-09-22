@@ -22,7 +22,7 @@ export default class AddInventory extends Component {
         })
     }
     addToInventory() {
-        axios.post(url, this.state).then(response => response.data)
+        axios.post(url, this.state.name, this.state.price).then(response => response.data)
     }
     render() {
         return (
