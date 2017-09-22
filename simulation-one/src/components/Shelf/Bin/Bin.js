@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './Bin.css';
-const url = '/shelfie/'
+const url = '/shelfie/';
 
 export default class Bin extends Component {
     constructor(props) {
@@ -9,7 +10,7 @@ export default class Bin extends Component {
             edit: false,
             id: '',
             name: '',
-            price: '',
+            price: ''
         }
     }
     handleNameChange(e) {
@@ -24,16 +25,17 @@ export default class Bin extends Component {
     }
     save() {
         axios.put(url + this.state.id)
-            .then(response => response.data)
-            .then(this.setState({
-                edit: false,
-                name: response.data.name,
-                price: response.data.price
-            }))
+            .then(response => {
+                this.setState({
+                    edit: false,
+                    name: response.data.name,
+                    price: response.data.price
+                })
+            })
     }
     toggleEditOrSave() {
         this.state.edit ?
-            save()
+            this.save()
             :
             this.setState({
                 edit: true
@@ -47,7 +49,7 @@ export default class Bin extends Component {
             <div className="Bin" >
                 <div className="bin-name">
                     <h1>Name</h1>
-                    <input type="text" placeholder="Name" onChange={e => this.handleNameChange(e)} ></input>
+                    <input type="text" onChange={e => this.handleNameChange(e)} ></input>
                 </div>
                 <div className="bin-price">
                     <h1>Price</h1>
