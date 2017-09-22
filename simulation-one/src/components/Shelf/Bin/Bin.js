@@ -9,7 +9,7 @@ export default class Bin extends Component {
             edit: false,
             id: '',
             name: '',
-            price: '',
+            price: ''
         }
     }
     handleNameChange(e) {
