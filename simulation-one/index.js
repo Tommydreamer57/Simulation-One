@@ -2,12 +2,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const massive = require('massive');
-const products_controller = require('/products_controller');
+const products_controller = require('./server/products_controller');
 
 require('dotenv').config()
 //Look into this a bit more
-app.use(express.static('public'))
+
 const app = express();
+app.use(express.static('public'))
 app.use(bodyParser.json());
 app.use(cors());
 
