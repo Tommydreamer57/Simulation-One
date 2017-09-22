@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './AddInventory.css';
 
 export default class AddInventory extends Component {

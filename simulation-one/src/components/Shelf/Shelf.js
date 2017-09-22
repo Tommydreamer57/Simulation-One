@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Shelf.css';
 
 export default class Shelf extends Component {
