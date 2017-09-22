@@ -1,4 +1,21 @@
 
 .Navbar {
-    
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 0;
+    background: #AB2A19;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    list-style: none;
+}
+
+.Navbar li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
 }

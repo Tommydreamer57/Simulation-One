@@ -1,16 +1,16 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import App from './App';
+import Landing from './components/Landing/Landing';
 import Shelf from './components/Shelf/Shelf';
 import AddInventory from './components/Shelf/AddInventory/AddInventory';
 import Bin from './components/Shelf/Bin/Bin';
 
 export default (
     <Switch>
-        <Route component={ App } path='/' exact />
-        <Route component={ Shelf } path='/bins/:id' />
-        <Route component={ Bin } path='/bin/:id' />
-        <Route component={ AddInventory } path='/create/:id' />
+        <Route component={ Landing } path='/shelfie/' exact />
+        <Route component={ Shelf } path='/shelfie/:shelf' exact/>
+        <Route component={ Bin } path='/shelfie/:shelf/:id' />
+        <Route component={ AddInventory } path='/shelfie/create' />
     </Switch>
 )
