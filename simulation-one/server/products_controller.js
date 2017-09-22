@@ -7,17 +7,19 @@ module.exports = {
         .catch(() => res.status(500).send())
     },
 
-    getShelves: (req, res, next) => {
-        const dbInstance = req.app.get('db')
-        dbInstance.get_shevles()
-        .then((shelves) => res.status(200).send(shevles))
-        .catch(() => res.status(500).send())
-        },
+    // getShelves: (req, res, next) => {
+    //     const dbInstance = req.app.get('db')
+
+    //     dbInstance.get_shevles()
+    //     .then((shelves) => res.status(200).send(shevles))
+    //     .catch(() => res.status(500).send())
+    //     },
         
     getProduct: (req, res, next) => {
         const dbInstance = req.app.get('db')
         const {params} = req;
-        dbInstance.get_product(params.product)
+
+        dbInstance.get_product(params.id)
         .then((product) => res.status(200).send(product))
         .catch(() => res.status(500).send())
     },
@@ -25,6 +27,7 @@ module.exports = {
     getBin: (req, res, next) => {
         const dbInstance =req.app.get('db')
         const {params} = req;
+
         dbInstance.get_bins(params.shelf, params.bin)
         .then((bin) => res.status(200).send(bin))
         .catch(() => res.send(500).send())
@@ -34,7 +37,7 @@ module.exports = {
         const dbInstance = req.app.get('db')
         const {params, query} = req;
 
-        dbInstance.update_product([params.product, params.price])
+        dbInstance.update_product([params.id, query.product, query.price])
         .then(() => res.status(200).send())
         .catch(() => res.status(500).send())
     },
@@ -43,7 +46,7 @@ module.exports = {
         dbInstance = req.app.get('db')
         const {params} = req;
 
-        dbInstance.delete_product([params.shelf, params.bin])
+        dbInstance.delete_product([params.id])
         .then(()=> res.status(200).send())
         .catch(()=> res.status(500).send());
 

@@ -16,7 +16,7 @@ massive(process.env.CONNECTION_STRING).then(dbInstance => app.set('db', dbInstan
 
 //String is placehold until I can come back this 
 app.post('api/product', products_controller.create);
-app.get('api/product', products_controller.getShelves);
+// app.get('api/product', products_controller.getShelves);
 app.get('api/product', products_controller.getBin);
 app.get('api/products', products_controller.getProduct);
 app.put('api/products', products_controller.update);
