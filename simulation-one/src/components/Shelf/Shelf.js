@@ -8,7 +8,7 @@ export default class Shelf extends Component {
         super(props)
         this.shelf = this.props.match.params.shelf;
         this.state = {
-            bins: []
+            bins: [1, 2, 3, 4]
         }
     }
 
@@ -20,10 +20,13 @@ export default class Shelf extends Component {
     render() {
         return (
             <ul className="shelf-list">
-                <NavLink to={`/shelfie/${this.shelf}`} className="shelf-button" ></NavLink>
-                <NavLink to={`/shelfie/${this.shelf}`} className="shelf-button" ></NavLink>
-                <NavLink to={`/shelfie/${this.shelf}`} className="shelf-button" ></NavLink>
-                <NavLink to={`/shelfie/${this.shelf}`} className="shelf-button" ></NavLink>
+                {
+                    this.state.bins.map((item, i) => {
+                        return (
+                            <NavLink to={`/shelfie/${this.shelf}/${item}`} className="shelf-button" >Bin {item}</NavLink>
+                        )
+                    })
+                }
             </ul>
         )
     }
