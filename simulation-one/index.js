@@ -14,6 +14,8 @@ app.use(cors());
 
 massive(process.env.CONNECTION_STRING).then(dbInstance => app.set('db', dbInstance))
 
+//String is placehold until I can come back this 
+app.post('api/product', products_controller.create)
 
 const port = process.env.port || 3000;
 app.listen(port, () => {console.log(`Server is listening on port ${port}.`); });
