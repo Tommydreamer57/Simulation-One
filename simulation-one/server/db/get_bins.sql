@@ -1,2 +1,2 @@
-select bins from products
+select bin from products
 where shelf = $1

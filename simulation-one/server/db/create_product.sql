@@ -1,0 +1,1 @@
+INSERT INTO Products (Product, Price, Bin, Shelf) VALUES ($1, $2, $3, $4);
