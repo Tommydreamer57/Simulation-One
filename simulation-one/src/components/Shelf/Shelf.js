@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
 import './Shelf.css';
 import { NavLink } from 'react-router-dom';
+import axios from 'axios';
 
 export default class Shelf extends Component {
     constructor(props) {
         super(props)
         this.shelf = this.props.match.params.shelf;
+        this.state = {
+            bins: []
+        }
     }
 
     componentDidMount() {
-//        axios.get(this.shelf, )
+        console.log(this.shelf)
+        axios.get(`api/product/${this.shelf}`).then(response => console.log(response.data))
     }
 
     render() {
