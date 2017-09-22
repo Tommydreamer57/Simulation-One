@@ -65,8 +65,8 @@ export default class Bin extends Component {
                                 <p className='bins_child_content_data p font_wight'><input type="text" value={this.state.price} onChange={e => this.handlePriceChange(e)} ></input></p>
                             </div>
                             <div className='bins_button_container'>
-                                    <button onClick={() => this.toggleEditOrSave()} >{this.state.edit ? "Save" : "Edit"}</button>
-                                    <button onClick={() => this.delete()} >Delete</button>
+                                    <button className='bin_button font_weight grey-bgc' onClick={() => this.toggleEditOrSave()} >{this.state.edit ? "Save" : "Edit"}</button>
+                                    <button className='bin_button font_weight grey-bgc' onClick={() => this.delete()} >Delete</button>
                             </div>
                 </div>
                             </div>
