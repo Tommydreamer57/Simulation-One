@@ -14,7 +14,7 @@ export default class Shelf extends Component {
 
     componentDidMount() {
         console.log(this.shelf)
-        axios.get(`api/product/${this.shelf}`).then(response => console.log(response.data))
+        axios.get(`api/products/${this.shelf}`).then(response => console.log(response.data))
     }
 
     render() {

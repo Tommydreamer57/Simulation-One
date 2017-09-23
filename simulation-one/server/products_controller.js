@@ -28,7 +28,7 @@ module.exports = {
         const dbInstance =req.app.get('db')
         const {params} = req;
 
-        dbInstance.get_bins(params.shelf, params.bin)
+        dbInstance.get_bins(params.shelf)
         .then((bin) => res.status(200).send(bin))
         .catch(() => res.send(500).send())
     },
